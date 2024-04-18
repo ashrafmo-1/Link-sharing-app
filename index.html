@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./style/master.css">
   <link rel="stylesheet" href="./style/phone frame.css">
-
+  <link rel="stylesheet" href="./style/all.min.css">
   <title>Document</title>
 </head>
+
 <body>
+  <!-- header controls -->
   <header class="top_controls">
     <h2 class="brand_title">
       <img class="brand_image" src="./assets/brand image.png" alt="brand image">
@@ -28,30 +31,70 @@
     <button class="perview_btn">perview</button>
 
   </header>
-  <!-- bage content -->
+  <!-- page content -->
   <div id="pages" class="pages">
-    <div id="Links_content_controls" > <!-- style="display: none;" -->
-      <div class="iphone">
-        <!-- draw phone -->
-        <div class="screen"></div>
-        <div class="notch"></div>
-        <div class="camera"></div>
-        <!-- social media -->
-        <div class="social">
-          <div class="gethub_account">
-            gethub_account
+    <div id="Links_content_controls"> <!-- style="display: none;" -->
+      <div class="mobile_viwe">
+        <div class="iphone">
+          <!-- draw phone -->
+          <div class="screen"></div>
+          <div class="notch"></div>
+          <div class="camera"></div>
+          <!-- ProfileDetails -->
+          <div class="ProfileDetails">
+            <div class="image"></div>
+            <div class="name"></div>
+            <div class="email"></div>
+            
           </div>
-          <div class="youtube_account">
-            gethub_account
-          </div>
-          <div class="linedin_account">
-            gethub_account
+          <!-- social media -->
+          <div class="social">
+            <div class="gethub_account">
+              <div class="link_info">
+                <i class="fa-brands fa-github social_media_icon"></i>
+                <span>gethub</span>
+              </div>
+            </div>
+            <div class="youtube_account">
+              <div class="link_info">
+                <img class="social_media_icon" src="./assets/youtube.png" alt="youtube icon">
+                <span>youTube</span>
+              </div>
+            </div>
+            <div class="linedin_account">
+              <div class="link_info">
+                <img class="social_media_icon" src="./assets/link.png" alt="linkedin icon">
+                <span>Linedin</span>
+              </div>
+            </div>
+            <div class="more_link"></div>
+            <div class="more_link"></div>
           </div>
         </div>
+      </div>
+      <div class="control_screen">
+        <h1 class="title">customize your links</h1>
+        <p class="desc">add/edit/remove links below and then share all your profiles with the wrold</p>
+        <button class="add_social_link">
+          <span>add new link</span>
+        </button>
+        <div class="box_link">
+          <form class="links_form_control">
+            <div class="box_link_one">
+              <h3>link 1</h3>
+              <label for="platformLinkOne">platform</label>
+              <input type="text" name="platformLinkOne" id="platformLinkOne" />
+            </div>
+          </form>
+        </div>
+        <div class="box_link_more"></div>
+        <div class="box_link_more"></div>
+        <div class="box_link_more"></div>
+      </div>
     </div>
-    </div>
-
   </div>
   <script src="./script/index.js"></script>
+  <script src="./script/all.min.js"></script>
 </body>
+
 </html>
