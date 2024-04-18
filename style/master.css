@@ -1,0 +1,105 @@
+:root {
+  --mainBGC: #eee;
+  --bgc_boxes: white;
+  --box_shadow: 0 0 3px rgba(0, 0, 0, 0.027);
+  --bgSecond: #efecff; /*efecff*/
+  --text_color: rgb(130, 110, 215);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--mainBGC);
+  font-family: sans-serif;
+  > .top_controls {
+    width: 95%;
+    height: 60px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--bgc_boxes);
+    box-shadow: var(--box_shadow);
+    margin-top: 20px;
+    padding: 2px 8px;
+    border-radius: 5px;
+    text-transform: capitalize;
+
+    .brand_title {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 28px;
+      font-weight: bold;
+      user-select: none;
+      -webkit-user-drag: none;
+      .brand_image {
+        width: 30px;
+      }
+    }
+    .links_control {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      .add_new_link {
+        background-color: var(--bgSecond);
+        color: var(--text_color);
+        border-radius: 10px;
+        width: 130px;
+        height: 45px;
+      }
+      .add_new_link,
+      .profile_details {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      .profile_details {
+        .info {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          width: 170px;
+          height: 45px;
+          border-radius: 10px;
+        }
+      }
+
+      .link,
+      .userAvatar {
+        width: 20px;
+      }
+    }
+
+    .perview_btn {
+      color: var(--text_color);
+      border: 2px solid var(--text_color);
+      font-size: 27px;
+      font-weight: bold;
+      border-radius: 10px;
+      width: 120px;
+      height: 45px;
+      cursor: pointer;
+    }
+  }
+}
+
+#Links_content_controls {
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: var(--bgc_boxes);
+  box-shadow: var(--box_shadow);
+  border-radius: 8px;
+}
