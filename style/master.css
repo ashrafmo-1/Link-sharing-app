@@ -376,7 +376,6 @@ body {
       height: 250px;
       padding: 25px;
       border-radius: 8px;
-      
 
       .imageBox {
         display: flex;
@@ -413,9 +412,10 @@ body {
       background-color: var(--mainBGC);
       box-shadow: var(--box_shadow);
       width: 100%;
-      height: fit-content;
+      height: 350px;
       border-radius: 8px;
       padding: 20px;
+      position: relative;
       > form {
         display: flex;
         flex-direction: column;
@@ -439,11 +439,22 @@ body {
             padding: 1px 3px;
             border-radius: 7px;
             font-family: sans-serif;
-          &:focus {
-            box-shadow: 0 0 5px var(--text_color);
+            &:focus {
+              box-shadow: 0 0 5px var(--text_color);
+            }
           }
-          }
-          
+        }
+        .saveInfo {
+          width: 120px;
+          height: 40px;
+          font-size: 22px;
+          position: absolute;
+          right: 20px;
+          bottom: 50px;
+          background-color: var(--text_color);
+          border: none;
+          border-radius: 7px;
+          color: var(--mainBGC);
         }
       }
     }

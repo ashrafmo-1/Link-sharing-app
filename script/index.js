@@ -74,6 +74,7 @@ saveBtn.addEventListener("click", (ele) => {
   localStorage.setItem("Fname", fName_input.value);
   localStorage.setItem("Lname", lName_input.value);
   localStorage.setItem("Email", email_input.value);
+  window.location.reload();
 })
 
 // add emage from input to localStorage
