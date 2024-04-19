@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./style/master.css">
-  <link rel="stylesheet" href="./style/phone frame.css">
+  <link rel="stylesheet" href="./style/classes.css">
   <link rel="stylesheet" href="./style/all.min.css">
   <title>Document</title>
 </head>
 
 <body>
   <!-- header controls -->
-  <header class="top_controls">
-    <h2 class="brand_title">
+  <header class="top_controls flex-between">
+    <h2 class="brand_title flex_align_center">
       <img class="brand_image" src="./assets/brand image.png" alt="brand image">
       <span>devLinks</span>
     </h2>
-    <div class="links_control">
-      <div class="add_new_link">
+    <div class="links_control flex-center">
+      <div class="add_new_link flex-center">
         <img class="link" src="./assets/link.png" alt="newlink">
         <span>link</span>
       </div>
-      <div class="profile_details">
-        <div class="info">
+      <div class="profile_details flex-center">
+        <div class="info flex-center">
           <img class="userAvatar" src="./assets/user.png" alt="newlink">
           <span>profile details</span>
         </div>
@@ -33,40 +33,45 @@
   </header>
   <!-- page content -->
   <div id="pages" class="pages">
-    <div id="Links_content_controls"> <!-- style="display: none;" -->
-      <div class="mobile_viwe">
+    <div id="Links_content_controls" class="flex-between">
+      <div class="mobile_viwe flex-center">
         <div class="iphone">
           <!-- draw phone -->
           <div class="screen"></div>
           <div class="notch"></div>
-          <div class="camera"></div>
           <!-- ProfileDetails -->
-          <div class="ProfileDetails">
+          <div class="ProfileDetails flex-center">
             <div class="image"></div>
-            <div class="name"></div>
-            <div class="email"></div>
-            
+            <div class="name flex-center">
+              <span class="F_Name"></span>
+              <span class="L_Name"></span>
+            </div>
+            <div class="email flex-center"></div>
+
           </div>
           <!-- social media -->
           <div class="social">
-            <div class="gethub_account">
-              <div class="link_info">
+            <a href="" class="github_account flex-between">
+              <div class="link_info github">
                 <i class="fa-brands fa-github social_media_icon"></i>
                 <span>gethub</span>
               </div>
-            </div>
-            <div class="youtube_account">
-              <div class="link_info">
-                <img class="social_media_icon" src="./assets/youtube.png" alt="youtube icon">
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="" class="youtube_account flex-between">
+              <div class="link_info youtube">
+                <i class="fa-brands fa-youtube social_media_icon"></i>
                 <span>youTube</span>
               </div>
-            </div>
-            <div class="linedin_account">
-              <div class="link_info">
-                <img class="social_media_icon" src="./assets/link.png" alt="linkedin icon">
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="" class="linedin_account flex-between">
+              <div class="link_info linkedin">
+                <i class="fa-brands fa-linkedin social_media_icon"></i>
                 <span>Linedin</span>
               </div>
-            </div>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
             <div class="more_link"></div>
             <div class="more_link"></div>
           </div>
@@ -76,20 +81,120 @@
         <h1 class="title">customize your links</h1>
         <p class="desc">add/edit/remove links below and then share all your profiles with the wrold</p>
         <button class="add_social_link">
+          <i class="fa-solid fa-plus"></i>
           <span>add new link</span>
         </button>
-        <div class="box_link">
-          <form class="links_form_control">
-            <div class="box_link_one">
-              <h3>link 1</h3>
-              <label for="platformLinkOne">platform</label>
-              <input type="text" name="platformLinkOne" id="platformLinkOne" />
+        <form class="boxesLinks">
+          <div class="box_link">
+            <div class="links_form_control">
+              <div class="box_link_one">
+                <!-- start box head -->
+                <div class="header_box flex">
+                  <i class="fa-solid fa-grip-lines lines_header_box_icon"></i>
+                  <h3>link 1</h3>
+                  <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <!-- end box head -->
+                <div class="select_social">
+                  <label class="labelSelect" for="platformLinkOne">platform</label>
+                  <div class="github">
+                    <i class="fa-brands fa-github social_media_icon"></i>
+                  </div>
+                </div>
+                <div class="input_social_link">
+                  <label class="labelSelect" for="platformLinkOne">link</label>
+                  <input class="github_input" type="link" name="link" id="link" required>
+                  <img src="./assets/link.png" alt="">
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="box_link">
+            <div class="links_form_control">
+              <div class="box_link_one">
+                <!-- start box head -->
+                <div class="header_box flex">
+                  <i class="fa-solid fa-grip-lines lines_header_box_icon"></i>
+                  <h3>link 2</h3>
+                  <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <!-- end box head -->
+                <div class="select_social">
+                  <label class="labelSelect" for="platformLinkOne">platform</label>
+                  <div class="youtube">
+                    <i class="fa-brands fa-youtube social_media_icon"></i>
+                  </div>
+                </div>
+                <div class="input_social_link">
+                  <label class="labelSelect" for="platformLinkOne">link</label>
+                  <input class="youtube_input" type="link" name="link" id="link" required>
+                  <img src="./assets/link.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box_link">
+            <div class="links_form_control">
+              <div class="box_link_one">
+                <!-- start box head -->
+                <div class="header_box flex">
+                  <i class="fa-solid fa-grip-lines lines_header_box_icon"></i>
+                  <h3>link 3</h3>
+                  <i class="fa-solid fa-hashtag"></i>
+                </div>
+                <!-- end box head -->
+                <div class="select_social">
+                  <label class="labelSelect" for="platformLinkOne">platform</label>
+                  <div class="linkedin">
+                    <i class="fa-brands fa-linkedin social_media_icon"></i>
+                  </div>
+                </div>
+                <div class="input_social_link">
+                  <label class="labelSelect" for="platformLinkOne">link</label>
+                  <input class="linkedin_input" type="link" name="link" id="link" required>
+                  <img src="./assets/link.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="box_link"></div>
+          <div class="box_link"></div>
+          <div class="box_link"></div>
+          <div class="box_link"></div>
+          <div class="box_link"></div>
+          <div class="box_link"></div>
+          <div class="box_link"></div>
+          <!-- btn submit -->
+          <div class="save"><button class="submit_btn">save</button></div>
+        </form>
+      </div>
+      <!-- profile Detaile -->
+      <div class="control_screen_profile_Detaile">
+        <div class="topInfo">
+          <h1 class="title">profile details</h1>
+          <p class="desc">add your profile details to create a personal touch to your profile.</p>
+          <div class="imageBox">
+            <h5 class="imageTitle">Profile pictur</h5>
+            <input type="file" name="img" accept="image/*" id="">
+          </div>
+        </div>
+        <div class="personInformation">
+          <form>
+            <div class="fName">
+              <label for="name">First name*</label>
+              <input type="name" />
+            </div>
+            <div class="lName">
+              <label for="name">Last name name*</label>
+              <input type="name" />
+            </div>
+            <div class="email">
+              <label for="email">Email*</label>
+              <input type="email" />
+            </div>
+            <button class="saveInfo">save</button>
           </form>
         </div>
-        <div class="box_link_more"></div>
-        <div class="box_link_more"></div>
-        <div class="box_link_more"></div>
       </div>
     </div>
   </div>
