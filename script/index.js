@@ -128,3 +128,9 @@ document.querySelector(".profile_details").addEventListener("click", () => {
   document.querySelector(".control_screen").style.display = "none";
   document.querySelector(".control_screen_profile_Detaile").style.display = "flex";
 });
+
+// media screens;
+document.querySelector(".toggle_barse").addEventListener("click", () => {
+  console.log("hello btn");
+  document.querySelector(".top_controls .links_control").style.display = "flex";
+})

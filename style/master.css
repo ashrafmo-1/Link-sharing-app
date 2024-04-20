@@ -104,6 +104,7 @@ body {
     border-radius: 8px;
     width: 30%;
     height: 100%;
+    padding: 20px;
 
     .iphone {
       width: 300px;
@@ -457,6 +458,47 @@ body {
           color: var(--mainBGC);
         }
       }
+    }
+  }
+}
+
+
+@media(max-width:1200px) {
+  .mobile_viwe {
+    width: 45% !important;
+  }
+  .control_screen {
+  width: 55% !important;
+  }
+}
+
+@media(max-width: 767px) {
+  #Links_content_controls {
+    flex-direction: column !important;
+    height: 200vh;
+
+  }
+  .mobile_viwe {
+    width: 100% !important;
+  }
+  .control_screen {
+  width: 100% !important;
+  }
+}
+
+@media(max-width: 696px) {
+  .links_control {
+    display: none !important;
+  }
+}
+@media(min-width: 695px) {
+  .toggle_barse {
+    display: none;
+
+    > .toggle_icon {
+      font-size: 22px;
+      width: 100px;
+      height: 30px;
     }
   }
 }
