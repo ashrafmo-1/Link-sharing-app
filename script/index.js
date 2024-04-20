@@ -119,18 +119,51 @@ function dataStoring() {
   if (EmailStorage) {
     Email.innerHTML = EmailStorage;
   }
+}
+
+
+
+const linksControlDiv = document.querySelector('.control_screen');
+const profileDetailsDiv = document.querySelector('.control_screen_profile_Detaile');
+const showLinksControlBtn = document.querySelector('.add_new_link');
+const showProfileDetailsBtn = document.querySelector('.profile_details');
+function Rouring() {
+  profileDetailsDiv.style.display = 'none';
+
+  showLinksControlBtn.addEventListener('click', function() {
+    linksControlDiv.style.display = 'block';
+    profileDetailsDiv.style.display = 'none';
+  });
+
+  showProfileDetailsBtn.addEventListener('click', function() {
+    linksControlDiv.style.display = 'none';
+    profileDetailsDiv.style.display = 'block';
+  })
+}
+
+
+
+const previewButton = document.querySelector('.perview_btn');
+const mobileView = document.querySelector('.mobile_viwe');
+const Links_content_controls = document.querySelector("#Links_content_controls");
+function show_end_Info() {
+  // Initially hide the mobile view
+  mobileView.style.display = 'flex';
+
+  previewButton.addEventListener('click', function() {
+      if (mobileView.style.display === 'flex') {
+        linksControlDiv.style.display = 'none';
+        profileDetailsDiv.style.display = 'none';
+        Links_content_controls.style.display = 'flex';
+        Links_content_controls.style.justifyContent = 'center';
+        Links_content_controls.style.alignItems = 'center';
+      } else {
+        linksControlDiv.style.display = 'flex';
+        profileDetailsDiv.style.display = 'flex';
+      }
+  });
 };
 
-dataStoring()
-
-// routing
-document.querySelector(".profile_details").addEventListener("click", () => {
-  document.querySelector(".control_screen").style.display = "none";
-  document.querySelector(".control_screen_profile_Detaile").style.display = "flex";
-});
-
-// media screens;
-document.querySelector(".toggle_barse").addEventListener("click", () => {
-  console.log("hello btn");
-  document.querySelector(".top_controls .links_control").style.display = "flex";
-})
+dataStoring();
+Rouring();
+show_end_Info();
