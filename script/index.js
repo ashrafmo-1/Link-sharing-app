@@ -6,34 +6,34 @@ document.querySelector(".profile_details").addEventListener("click", function (e
     infoElement.style.color = isActive ? "" : "var(--text_color)";
   });
 
-  const githubInput = document.querySelector(".input_social_link .github_input");
-  const youtubeInput = document.querySelector(".input_social_link .youtube_input");
-  const linkedinInput = document.querySelector(".input_social_link .linkedin_input");
-  const githubLink = document.querySelector(".github_account");
-  const youtubeLink = document.querySelector(".youtube_account");
-  const linkedinLink = document.querySelector(".linedin_account");
-  /* on click btn save */
-  document.querySelector(".save .submit_btn").addEventListener("click", (e) => {
+const githubInput = document.querySelector(".input_social_link .github_input");
+const youtubeInput = document.querySelector(".input_social_link .youtube_input");
+const linkedinInput = document.querySelector(".input_social_link .linkedin_input");
+const githubLink = document.querySelector(".github_account");
+const youtubeLink = document.querySelector(".youtube_account");
+const linkedinLink = document.querySelector(".linedin_account");
+const btnSave = document.querySelector(".save .submit_btn")
+/* on click btn save */
+btnSave.addEventListener("click", (e) => {
   e.preventDefault();
-
+  
+  // check if GitHub unput not empty
   if (!githubInput.value.trim()) {
-      alert("GitHub link is required.");
+    alert("GitHub link is required.");
     githubInput.style.borderColor = "red";
   } else {
     localStorage.setItem("githubLinkStorage", githubInput.value);
     githubInput.style.borderColor = "#777";
   }
-
   if (!youtubeInput.value.trim()) {
-      alert("YouTube link is required.");
+    alert("YouTube link is required.");
     youtubeInput.style.borderColor = "red";
   } else {
     localStorage.setItem("youtubeLinkStorage", youtubeInput.value);
     youtubeInput.style.borderColor = "#777";
   }
-
   if (!linkedinInput.value.trim()) {
-      alert("LinkedIn link is required.");
+    alert("LinkedIn link is required.");
     linkedinInput.style.borderColor = "red";
   } else {
     localStorage.setItem("linkedinLinkStorage", linkedinInput.value);
@@ -42,11 +42,12 @@ document.querySelector(".profile_details").addEventListener("click", function (e
   window.location.reload();
 });
 
-document.querySelector(".imageBox input[type='file']").addEventListener("change", function(e) {
+// handle portfolio image
+document.querySelector(".imageBox input[type='file']").addEventListener("change", function (e) {
   const file = e.target.files[0];
   if (file) {
     const reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       const imageUrl = e.target.result;
       localStorage.setItem("profileImage", imageUrl);
       const imageElement = document.querySelector(".ProfileDetails .image");
@@ -75,7 +76,7 @@ saveBtn.addEventListener("click", (ele) => {
   localStorage.setItem("Lname", lName_input.value);
   localStorage.setItem("Email", email_input.value);
   window.location.reload();
-})
+});
 
 // add emage from input to localStorage
 function dataStoring() {
@@ -89,19 +90,19 @@ function dataStoring() {
   }
   // github link
   const githubLinkStorage = localStorage.getItem("githubLinkStorage");
-  if(githubLinkStorage) {
+  if (githubLinkStorage) {
     console.log(true, "github link storage");
     githubLink.href = githubLinkStorage; // Update link instead of removing
   }
   // github link
   const youtubeLinkStorage = localStorage.getItem("youtubeLinkStorage");
-  if(youtubeLinkStorage) {
+  if (youtubeLinkStorage) {
     console.log(true, "youtube Link Storage");
     youtubeLink.href = youtubeLinkStorage;
   }
   // github link
   const linkedinLinkStorage = localStorage.getItem("linkedinLinkStorage");
-  if(linkedinLinkStorage) {
+  if (linkedinLinkStorage) {
     console.log(true);
     linkedinLink.href = linkedinLinkStorage;
   }
@@ -121,49 +122,90 @@ function dataStoring() {
   }
 }
 
-
-
-const linksControlDiv = document.querySelector('.control_screen');
-const profileDetailsDiv = document.querySelector('.control_screen_profile_Detaile');
-const showLinksControlBtn = document.querySelector('.add_new_link');
-const showProfileDetailsBtn = document.querySelector('.profile_details');
+const linksControlDiv = document.querySelector(".control_screen");
+const profileDetailsDiv = document.querySelector(
+  ".control_screen_profile_Detaile"
+);
+const showLinksControlBtn = document.querySelector(".add_new_link");
+const showProfileDetailsBtn = document.querySelector(".profile_details");
 function Rouring() {
-  profileDetailsDiv.style.display = 'none';
+  profileDetailsDiv.style.display = "none";
 
-  showLinksControlBtn.addEventListener('click', function() {
-    linksControlDiv.style.display = 'block';
-    profileDetailsDiv.style.display = 'none';
+  showLinksControlBtn.addEventListener("click", function () {
+    linksControlDiv.style.display = "block";
+    profileDetailsDiv.style.display = "none";
   });
 
-  showProfileDetailsBtn.addEventListener('click', function() {
-    linksControlDiv.style.display = 'none';
-    profileDetailsDiv.style.display = 'block';
-  })
+  showProfileDetailsBtn.addEventListener("click", function () {
+    linksControlDiv.style.display = "none";
+    profileDetailsDiv.style.display = "block";
+  });
 }
 
-
-
-const previewButton = document.querySelector('.perview_btn');
-const mobileView = document.querySelector('.mobile_viwe');
-const Links_content_controls = document.querySelector("#Links_content_controls");
+const previewButton = document.querySelector(".perview_btn");
+const mobileView = document.querySelector(".mobile_viwe");
+const Links_content_controls = document.querySelector(
+  "#Links_content_controls"
+);
 function show_end_Info() {
   // Initially hide the mobile view
-  mobileView.style.display = 'flex';
+  mobileView.style.display = "flex";
 
-  previewButton.addEventListener('click', function() {
-      if (mobileView.style.display === 'flex') {
-        linksControlDiv.style.display = 'none';
-        profileDetailsDiv.style.display = 'none';
-        Links_content_controls.style.display = 'flex';
-        Links_content_controls.style.justifyContent = 'center';
-        Links_content_controls.style.alignItems = 'center';
-      } else {
-        linksControlDiv.style.display = 'flex';
-        profileDetailsDiv.style.display = 'flex';
-      }
+  previewButton.addEventListener("click", function () {
+    if (mobileView.style.display === "flex") {
+      linksControlDiv.style.display = "none";
+      profileDetailsDiv.style.display = "none";
+      Links_content_controls.style.display = "flex";
+      Links_content_controls.style.justifyContent = "center";
+      Links_content_controls.style.alignItems = "center";
+    } else {
+      linksControlDiv.style.display = "flex";
+      profileDetailsDiv.style.display = "flex";
+    }
   });
-};
+}
 
 dataStoring();
 Rouring();
 show_end_Info();
+DragAndDrop();
+
+function DragAndDrop() {
+  let draggedItem = null;
+  let draggedItemId = null;
+
+  const dragStart = function(e) {
+    draggedItem = this;
+    draggedItemId = this.id;
+    e.dataTransfer.setData('text/html', this.innerHTML);
+  };
+
+  const dragOver = function(e) {
+    e.preventDefault();
+  };
+
+  const drop = function(e) {
+    e.preventDefault();
+    if (draggedItem) {
+      this.appendChild(draggedItem);
+      // Save the new order in local storage
+      saveOrderInLocalStorage(draggedItemId, this.id);
+      draggedItem = null;
+    }
+  };
+
+  const saveOrderInLocalStorage = (draggedItemId, targetId) => {
+    let order = localStorage.getItem('dragOrder') ? JSON.parse(localStorage.getItem('dragOrder')) : {};
+    order[draggedItemId] = targetId;
+    localStorage.setItem('dragOrder', JSON.stringify(order));
+  };
+
+  document.querySelectorAll('[draggable="true"]').forEach(item => {
+    item.addEventListener('dragstart', dragStart);
+  });
+
+  document.querySelectorAll('.social').forEach(item => {
+    item.addEventListener('dragover', dragOver);
+    item.addEventListener('drop', drop);
+  });
+};
